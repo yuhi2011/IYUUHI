@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡単なWebサイト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #home {
+            background-color: #f9f9f9;
+            height: 150vh; /* ホームセクションをさらに拡大 */
+        }
+        #about {
+            background-color: #e9e9e9;
+            height: 40vh; /* 概要セクションを縮小 */
+        }
+        #contact {
+            background-color: #d9d9d9;
+            height: 40vh; /* お問い合わせセクションを縮小 */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .carousel {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .carousel-controls button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            pointer-events: all;
+            position: relative;
+        }
+        .carousel-controls button#prev {
+            left: 5px;
+            transform: translateX(0);
+        }
+        .carousel-controls button#next {
+            right: 5px;
+            transform: translateX(0);
+        }
+        .carousel-controls button:hover {
+            background-color: #e64a19;
+        }
+        .calendar {
+            width: 100%;
+            max-width: 700px; /* カレンダーの横幅を広げる */
+            height: 600px; /* カレンダーの高さを設定 */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            background: white;
+        }
+        iframe {
+            width: 100%;
+            height: 100%; /* iframe内の高さを調整 */
+            border: none;
+        }
+        .todo {
+            width: 100%;
+            max-width: 700px;
+            padding: 1rem;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .todo h4 {
+            margin-top: 0;
+        }
+        .todo ul {
+            list-style: none;
+            padding: 0;
+        }
+        .todo ul li {
+            padding: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>私の簡単なWebサイト</h1>
+    </header>
+    <nav>
+        <a href="#home">ホーム</a>
+        <a href="#about">概要</a>
+        <a href="#contact">お問い合わせ</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>ホーム</h2>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <h3>日程管理</h3>
+                        <p>予定を管理できます。</p>
+                        <div class="calendar">
+                            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id_1&ctz=Asia%2FTokyo"></iframe>
+                        </div>
+                        <div class="todo">
+                            <h4>To-Do List</h4>
+                            <ul>
+                                <li>会議の準備 <span>50%</span></li>
+                                <li>書類提出 <span>100%</span></li>
+                                <li>イベント計画 <span>20%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>体調管理</h3>
+                        <p>タスクの進行状況を把握できます。</p>
+                        <div class="calendar">
+                            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id_2&ctz=Asia%2FTokyo"></iframe>
+                        </div>
+                        <div class="todo">
+                            <h4>To-Do List</h4>
+                            <ul>
+                                <li>運動 30分 <span>70%</span></li>
+                                <li>健康診断予約 <span>0%</span></li>
+                                <li>ビタミン摂取 <span>100%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>課題管理</h3>
+                        <p>課題の締切を確認できます。</p>
+                        <div class="calendar">
+                            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id_3&ctz=Asia%2FTokyo"></iframe>
+                        </div>
+                        <div class="todo">
+                            <h4>To-Do List</h4>
+                            <ul>
+                                <li>課題1提出 <span>80%</span></li>
+                                <li>課題2調査 <span>40%</span></li>
+                                <li>グループディスカッション <span>60%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="prev">&#8249;</button>
+                    <button id="next">&#8250;</button>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>概要</h2>
+            <p>このWebサイトはHTMLとCSSを使って作成しました。</p>
+        </section>
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>お問い合わせはメールでどうぞ。</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 簡単なWebサイト</p>
+    </footer>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const width = items[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        function autoScroll() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        }
+
+        let autoScrollInterval = setInterval(autoScroll, 10000);
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(autoScroll, 10000);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(autoScroll, 10000);
+        });
+
+        window.addEventListener('resize', updateCarousel);
+    </script>
+</body>
+</html>
